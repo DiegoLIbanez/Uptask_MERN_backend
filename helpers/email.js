@@ -19,7 +19,7 @@ export const emailRegistro = async (datos) => {
         text: 'Comprueba tu cuenta en Uptask',
         html:`<P>Hola: ${nombre} Comprueba tu cuenta en Uptask</P>
         <p>Tu cuenta ya esta casi lista solo debes comprobarla en el siguiente enlace:</p>
-        <a href="https://uptask-12312.netlify.app/confirmar/${token}">Comprobar Cuenta</a>
+        <a href="${process.env.FRONTEND_URL}/confirmar/${token}">Comprobar Cuenta</a>
         <p>Si tu no confirmaste tu cuenta, puedes ignorar el mensaje</p>
         `
       })
@@ -46,7 +46,7 @@ export const emailOlvidePassword = async (datos) => {
       text: 'Restablece tu Contraseña',
       html:`<P>Hola: ${nombre} has solicitado reestablecer tu contraseña en Uptask</P>
       <p>Sigue el siguinete enlace para generar un nueva contraseña:</p>
-      <a href="https://uptask-12312.netlify.app/olvide-password/${token}">Reestablecer Contraseña</a>
+      <a href="${process.env.FRONTEND_URL}/olvide-password/${token}">Reestablecer Contraseña</a>
       <p>Si tu no solicitaste este email, puedes ignorar el mensaje</p>
       `
     })

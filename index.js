@@ -12,19 +12,19 @@ dotenv.config()
 conectarDB()
 
 //Configuracion de cors
-const whitelist = ["https://uptask-12312.netlify.app"]
+// const whitelist = ["https://uptask-12312.netlify.app"]
 
-const corsOptions = {
-    origin: function (origin, callback) {
-        if(whitelist.includes(origin)){
-            callback(null, true)
-        }else{  
-            callback(new Error("Error de cors"))
-         }
-    }
-}
-
-app.use(cors(corsOptions))
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if(whitelist.includes(origin)){
+//             callback(null, true)
+//         }else{  
+//             callback(new Error("Error de cors"))
+//          }
+//     }
+// }
+// corsOptions
+app.use(cors())
 
 //Routing
 app.use("/api/usuarios", UsuarioRouter )
