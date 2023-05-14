@@ -26,7 +26,7 @@ conectarDB()
 // corsOptions
 app.use(cors(
     {
-        origin: "https://uptask123123.netlify.app",
+        origin: "http://localhost:3000",
         optionsSuccessStatus: 200
     }
 ))
@@ -39,7 +39,7 @@ app.use("/api/tareas", TareaRouter )
 
 const PORT = process.env.PORT || 4000;
 
-const servidor = app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`servidor corriendo en el puerto ${PORT}`)
 })
 
