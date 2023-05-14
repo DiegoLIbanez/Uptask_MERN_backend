@@ -24,7 +24,12 @@ conectarDB()
 //     }
 // }
 // corsOptions
-app.use(cors())
+app.use(cors(
+    {
+        origin: "https://uptask123123.netlify.app",
+        optionsSuccessStatus: 200
+    }
+))
 
 //Routing
 app.use("/api/usuarios", UsuarioRouter )
