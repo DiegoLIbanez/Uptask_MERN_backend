@@ -4,15 +4,15 @@ export const emailRegistro = async (datos) => {
     const {email,nombre,token} = datos;
 
     const transport = nodemailer.createTransport({
-        host:process.env.EMAIL_HOST,
-        port: process.env.EMAIL_PORT,
+        host:"smtp.gmail.com",
+        port: 465,
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
         }
       });
 
-      const info = await transport.sendMail({
+      await transport.sendMail({
         from:'"Uptask - Administrador de Proyectos" <cuentas@uptask.com>',
         to: email,
         subject: 'Confirma Tu Cuenta',
