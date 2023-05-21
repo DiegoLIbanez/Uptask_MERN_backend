@@ -23,7 +23,7 @@ const usuarioSchema = mongoose.Schema({
     },
     confirmado:{
         type:Boolean,
-        default:true
+        default:false
     }
 
 },{
