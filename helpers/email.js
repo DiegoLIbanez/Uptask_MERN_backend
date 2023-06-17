@@ -1,11 +1,13 @@
 import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const emailRegistro = async (datos) => {
     const {email,nombre,token} = datos;
 
     const transport = nodemailer.createTransport({
         host:"smtp.gmail.com",
-        port: 465,
+        port: process.env.EMAIL_PORT,
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
@@ -32,7 +34,7 @@ export const emailOlvidePassword = async (datos) => {
   const transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     secure: false,
-    port: 587,
+    port: process.env.EMAIL_PORT,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,

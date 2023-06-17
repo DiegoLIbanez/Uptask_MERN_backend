@@ -24,7 +24,7 @@ const registrar = async(req,res) => {
         emailRegistro({
             nombre: usuario.nombre,
             email: usuario.email,
-            token: usuario.token
+            token: usuario.token,
         })
 
 
